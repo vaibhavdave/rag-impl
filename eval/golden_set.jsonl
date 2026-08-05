@@ -1,0 +1,34 @@
+{"use_case": "plans", "account": null, "query": "What's the difference between Free and Pro?", "expects": ["pro", "free"]}
+{"use_case": "plans", "account": null, "query": "If I downgrade from Team to Pro mid-cycle, what happens to my access?", "expects": ["cycle"]}
+{"use_case": "plans", "account": "demo.free@nimbus.ai", "query": "I'm on Free and keep hitting my daily limit, should I upgrade?", "expects": ["pro"]}
+{"use_case": "plans", "account": null, "query": "Does upgrading to Pro charge me immediately or at my next cycle?", "expects": ["immediately"]}
+{"use_case": "plans", "account": null, "query": "Is SSO available on Team or only Enterprise?", "expects": ["enterprise"]}
+{"use_case": "plans", "account": null, "query": "How do I cancel my subscription?", "expects": ["cancel"]}
+{"use_case": "plans", "account": null, "query": "What happens to my uploaded files if I downgrade to Free?", "expects": ["files"]}
+{"use_case": "billing", "account": "demo.billing@nimbus.ai", "query": "I think I was charged twice this month, can you check my account?", "expects": ["duplicate"]}
+{"use_case": "billing", "account": null, "query": "What's your refund policy?", "expects": ["refund"]}
+{"use_case": "billing", "account": "demo.billing@nimbus.ai", "query": "Can you pull up my recent charges?", "expects": ["20"]}
+{"use_case": "billing", "account": null, "query": "My card was declined at renewal, will I lose access right away?", "expects": ["grace"]}
+{"use_case": "billing", "account": null, "query": "Where do I download an invoice for my finance team?", "expects": ["invoice"]}
+{"use_case": "billing", "account": "demo.billing@nimbus.ai", "query": "Can I get a refund for that duplicate charge you found?", "expects": ["refund"]}
+{"use_case": "billing", "account": null, "query": "Why does my card statement say NIMBUS AI SUBSCRIPTION?", "expects": ["subscription"]}
+{"use_case": "usage", "account": "demo.limits@nimbus.ai", "query": "Why do I keep getting rate limited today?", "expects": ["limit"]}
+{"use_case": "usage", "account": "demo.limits@nimbus.ai", "query": "How many messages do I have left before I run out today?", "expects": ["2", "remaining"]}
+{"use_case": "usage", "account": null, "query": "When do message limits reset, is it at midnight?", "expects": ["24"]}
+{"use_case": "usage", "account": null, "query": "What's the context window difference between Pro and Free?", "expects": ["200"]}
+{"use_case": "usage", "account": null, "query": "Does my API usage count against my chat message limit?", "expects": ["separate"]}
+{"use_case": "usage", "account": "demo.free@nimbus.ai", "query": "Am I close to my daily message limit?", "expects": ["19", "20"]}
+{"use_case": "usage", "account": null, "query": "Do unused messages roll over to the next day?", "expects": ["not"]}
+{"use_case": "troubleshooting", "account": "demo.troubleshoot@nimbus.ai", "query": "My file upload keeps failing, what's wrong?", "expects": ["20mb", "format", "upload"]}
+{"use_case": "troubleshooting", "account": null, "query": "I got a 429 error calling the API, what does that mean?", "expects": ["429"]}
+{"use_case": "troubleshooting", "account": null, "query": "I'm getting 500 errors from the API, what should I do?", "expects": ["retry"]}
+{"use_case": "troubleshooting", "account": null, "query": "Our Slack integration keeps disconnecting, how do I fix it?", "expects": ["slack"]}
+{"use_case": "troubleshooting", "account": null, "query": "I can't log in, it says invalid credentials but I'm sure they're right", "expects": ["password"]}
+{"use_case": "troubleshooting", "account": null, "query": "What file types can I upload?", "expects": ["pdf"]}
+{"use_case": "admin", "account": "demo.admin@nimbus.ai", "query": "One of our employees left the company but still shows as an active seat, how do I remove them?", "expects": ["seat"]}
+{"use_case": "admin", "account": "demo.member@nimbus.ai", "query": "Can you show me our org's seat list?", "expects": ["admin"]}
+{"use_case": "admin", "account": "demo.admin@nimbus.ai", "query": "How do I add 3 more seats to our team?", "expects": ["invite"]}
+{"use_case": "admin", "account": null, "query": "How do we set up SSO for our organization?", "expects": ["saml"]}
+{"use_case": "admin", "account": "demo.admin@nimbus.ai", "query": "Can you check our current seat roster?", "expects": ["seat"]}
+{"use_case": "admin", "account": null, "query": "Who is allowed to remove seats from an org?", "expects": ["admin"]}
+{"use_case": "admin", "account": null, "query": "How do I transfer org ownership to someone else?", "expects": ["transfer"]}
