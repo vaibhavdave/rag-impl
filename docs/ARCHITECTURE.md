@@ -272,7 +272,7 @@ rag-impl/
 |---|---|---|
 | LLM | Claude (Sonnet) via Anthropic API, native tool use | Skips agent-framework overhead for 5 well-defined use cases |
 | Vector store | Chroma (embedded/local) | Zero infra, fast to stand up in a 2-week window |
-| Embeddings | Voyage or local `sentence-transformers` | Either is adequate at this corpus size |
+| Embeddings | Local TF-IDF (`scikit-learn`), fit on the KB corpus at seed time | No pretrained model download, no external API — fully offline after `pip install`. Swap for `sentence-transformers`/Voyage if network access to a model hub is available and semantic (not just lexical) matching is needed; see DEVELOPER_GUIDE.md |
 | Relational DB | SQLite | Single-file, no server to run, fine for MVP concurrency |
 | Frontend | Streamlit | Login form + chat in one framework, fastest path to a demo |
 | Orchestration | Plain Python, no LangChain/LlamaIndex | 5 tools + 1 retrieval step doesn't need a framework |
