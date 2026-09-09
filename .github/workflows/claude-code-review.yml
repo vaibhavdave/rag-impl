@@ -1,0 +1,34 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  claude-review:
+    # Skip drafts to avoid burning a review on work-in-progress pushes.
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review this pull request. Focus on correctness bugs, security issues
+            (especially around secrets, auth, and per-user data isolation), and
+            clear simplification opportunities. Leave inline comments on the
+            specific lines they apply to, plus a short summary comment. Skip
+            style nits unless they affect correctness.
+          claude_args: |
+            --allowedTools "Read,Grep,Glob,Bash(git diff:*)"
