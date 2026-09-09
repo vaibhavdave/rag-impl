@@ -58,7 +58,7 @@ Seeding is idempotent — rerunning `data/seed_accounts.py` or `data/seed_kb.py`
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-cp .env.example .env   # then put your real ANTHROPIC_API_KEY in .env
+cp .env.example .env   # then put your real OPENROUTER_API_KEY (get one at https://openrouter.ai/keys)
 
 python data/seed_accounts.py   # -> data/app.db
 python data/seed_kb.py         # -> data/chroma/, data/tfidf_vectorizer.pkl
@@ -74,7 +74,7 @@ Both seed scripts must be run before first use — `retriever.py` and `auth.py` 
 python eval/run_eval.py
 ```
 
-This makes real Claude API calls (needs `ANTHROPIC_API_KEY`) and does a keyword-presence check per reply — treat a "PASS" as a weak signal, not proof of correctness, and actually read a sample of the transcripts it prints. It's a regression net for "did I just break something," not a quality bar.
+This makes real API calls via OpenRouter (needs `OPENROUTER_API_KEY`) and does a keyword-presence check per reply — treat a "PASS" as a weak signal, not proof of correctness, and actually read a sample of the transcripts it prints. It's a regression net for "did I just break something," not a quality bar.
 
 ## Adding a 6th use case
 
