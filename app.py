@@ -9,8 +9,10 @@ load_dotenv()
 st.set_page_config(page_title="Nimbus AI Helpdesk", page_icon="💬", layout="centered")
 
 # ── Inject global CSS ─────────────────────────────────────────────────────────
+# Hide the invisible container Streamlit creates for the <style> block
 st.markdown("""
 <style>
+.element-container:has(style) { display: none; }
 /* ── Global Reset ──────────────────── */
 .stApp { background: #0f0f1a; }
 .block-container { padding-top: 2rem; }
