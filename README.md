@@ -10,7 +10,7 @@ Covers 5 use cases: plan guidance, billing issues, usage/rate limits, feature tr
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-cp .env.example .env   # add your ANTHROPIC_API_KEY
+cp .env.example .env   # add your OPENROUTER_API_KEY from https://openrouter.ai/keys
 
 python data/seed_accounts.py
 python data/seed_kb.py

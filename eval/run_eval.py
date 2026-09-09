@@ -1,6 +1,6 @@
 """
 Runs the golden set through the live orchestrator (real Claude API calls —
-requires ANTHROPIC_API_KEY and a seeded database/vector store) and does a
+requires OPENROUTER_API_KEY and a seeded database/vector store) and does a
 loose keyword check on each reply. This is a sanity net, not a substitute
 for reading transcripts: keyword presence is a weak signal, so review
 failures (and a sample of passes) by eye before trusting a "pass" count.
